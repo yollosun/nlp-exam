@@ -57,6 +57,7 @@ class PegasusTransformer:
         return paraphrase
 
     def paraphrase_english_text(self, input_text_list):
+        input_text_list = input_text_list[0].split(".")
         paraphrase = ""
         for i in input_text_list:
             output = self.__get_response(i)
