@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from typing import List
-from models.pegasus import get_response
+from domain.pegasus import get_response
 
 
 router = APIRouter(
-    prefix="/v1/api", tags=["v1"], responses={404: {"description": "Not found"}}
+    prefix="/api/v1", tags=["v1"], responses={404: {"description": "Not found"}}
 )
 
 

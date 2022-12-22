@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from router import v1_router
+from api.v2 import paraphrase_controllers
 import uvicorn as uvicorn
 
 origins = [
@@ -31,7 +31,7 @@ def create_app() -> FastAPI:
         version="1.0.0",
     )
 
-    current_app.include_router(v1_router.router)
+    current_app.include_router(paraphrase_controllers.router)
 
     current_app.add_middleware(
         CORSMiddleware,
